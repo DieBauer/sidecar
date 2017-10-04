@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import stripIndent from '../utility/strip-indent-tag';
@@ -157,11 +158,11 @@ class MicrositeApp extends React.Component {
 
 MicrositeApp.propTypes = {
   // react-redux injected
-  dispatch: React.PropTypes.func,
+  dispatch: PropTypes.func,
 
-  roomName: React.PropTypes.string,
-  sidecarVersion: React.PropTypes.number,
-  documentation: React.PropTypes.string
+  roomName: PropTypes.string,
+  sidecarVersion: PropTypes.number,
+  documentation: PropTypes.string
 };
 
 

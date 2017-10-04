@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
+const autoprefixer = require('autoprefixer');
 
 var manifest = require('./package.json');
 var getPostcssPluginStack = require('./postcss-plugin-stack.js');
@@ -19,7 +20,7 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/,
-        loader: 'babel'
+        loader: 'babel-loader'
       },
       {
         test: /\.css$/,
@@ -28,9 +29,14 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.BannerPlugin(commentHeader)
-  ],
-  postcss: function() {
-    return getPostcssPluginStack();
-  }
+    new webpack.BannerPlugin(commentHeader),
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        context: __dirname,
+        postcss: [
+          autoprefixer
+        ]
+      }
+    })
+  ]
 };

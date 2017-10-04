@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 
@@ -104,10 +104,10 @@ export default class CopySnippetBlock extends React.Component {
 }
 
 CopySnippetBlock.propTypes = {
-  className: React.PropTypes.string,
-  value: React.PropTypes.string,
-  annotation: React.PropTypes.string,
-  copyButtonClickTimeout: React.PropTypes.number
+  className: PropTypes.string,
+  value: PropTypes.string,
+  annotation: PropTypes.string,
+  copyButtonClickTimeout: PropTypes.number
 };
 CopySnippetBlock.defaultProps = {
   copyButtonClickTimeout: 2000

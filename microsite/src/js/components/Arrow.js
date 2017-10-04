@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default class Arrow extends React.Component {
   constructor(props) {
@@ -74,9 +75,9 @@ export default class Arrow extends React.Component {
 
 }
 
-let pointType = React.PropTypes.shape({
-  x: React.PropTypes.number,
-  y: React.PropTypes.number
+let pointType = PropTypes.shape({
+  x: PropTypes.number,
+  y: PropTypes.number
 });
 Arrow.propTypes = {
   startPoint: pointType,
